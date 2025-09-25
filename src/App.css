@@ -324,25 +324,26 @@ main {
 
 .project-image {
   position: relative;
-  height: 200px;
-  background: linear-gradient(135deg, var(--primary-blue-light), var(--primary-blue));
+  height: 250px;
+  background: #f8f9fa;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--text-light);
   overflow: hidden;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
 }
 
 .project-screenshot {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
   transition: transform 0.3s ease;
+  background: white;
 }
 
 .project-image:hover .project-screenshot {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .project-status {

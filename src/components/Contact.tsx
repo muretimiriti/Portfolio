@@ -59,14 +59,14 @@ const Contact: React.FC = () => {
     {
       icon: <FaEnvelope />,
       title: 'Email',
-      value: 'victor.mureti@email.com',
-      link: 'mailto:victor.mureti@email.com'
+      value: 'muretivictor@gmail.com',
+      link: 'mailto:muretivictor@gmail.com'
     },
     {
       icon: <FaPhone />,
       title: 'Phone',
-      value: '+254 700 000 000',
-      link: 'tel:+254700000000'
+      value: '+254 708 287 141',
+      link: 'tel:+254708287141'
     },
     {
       icon: <FaMapMarkerAlt />,
@@ -80,12 +80,12 @@ const Contact: React.FC = () => {
     {
       icon: <FaLinkedin />,
       name: 'LinkedIn',
-      url: 'https://linkedin.com/in/victor-mureti'
+      url: 'https://www.linkedin.com/in/victor-mureti-b07512215/'
     },
     {
       icon: <FaGithub />,
       name: 'GitHub',
-      url: 'https://github.com/victor-mureti'
+      url: 'https://github.com/muretimiriti'
     },
     {
       icon: <FaTwitter />,

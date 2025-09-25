@@ -86,10 +86,10 @@ const Hero: React.FC = () => {
               className="hero-social"
               variants={itemVariants}
             >
-              <a href="https://linkedin.com/in/victor-mureti" target="_blank" rel="noopener noreferrer">
+              <a href="https://www.linkedin.com/in/victor-mureti-b07512215/" target="_blank" rel="noopener noreferrer">
                 <FaLinkedin />
               </a>
-              <a href="https://github.com/victor-mureti" target="_blank" rel="noopener noreferrer">
+              <a href="https://github.com/muretimiriti" target="_blank" rel="noopener noreferrer">
                 <FaGithub />
               </a>
               <a href="https://twitter.com/victor_mureti" target="_blank" rel="noopener noreferrer">

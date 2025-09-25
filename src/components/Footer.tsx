@@ -23,10 +23,10 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/victor-mureti', name: 'LinkedIn' },
-    { icon: <FaGithub />, url: 'https://github.com/victor-mureti', name: 'GitHub' },
+    { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/victor-mureti-b07512215/', name: 'LinkedIn' },
+    { icon: <FaGithub />, url: 'https://github.com/muretimiriti', name: 'GitHub' },
     { icon: <FaTwitter />, url: 'https://twitter.com/victor_mureti', name: 'Twitter' },
-    { icon: <FaEnvelope />, url: 'mailto:victor.mureti@email.com', name: 'Email' }
+    { icon: <FaEnvelope />, url: 'mailto:muretivictor@gmail.com', name: 'Email' }
   ];
 
   const quickLinks = [
@@ -86,8 +86,8 @@ const Footer: React.FC = () => {
           <motion.div className="footer-section" variants={itemVariants}>
             <h4>Contact Info</h4>
             <div className="contact-info">
-              <p>📧 victor.mureti@email.com</p>
-              <p>📱 +254 700 000 000</p>
+              <p>📧 muretivictor@gmail.com</p>
+              <p>📱 +254 708 287 141</p>
               <p>📍 Nairobi, Kenya</p>
             </div>
           </motion.div>
