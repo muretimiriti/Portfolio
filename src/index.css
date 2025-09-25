@@ -6,7 +6,7 @@
   /* Primary Colors */
   --primary-blue: #2563eb;
   --primary-blue-dark: #1d4ed8;
-  --primary-blue-light: #3b82f6;
+  --primary-blue-light: #0f172a;
   
   /* Secondary Colors */
   --secondary-gray: #64748b;
@@ -27,6 +27,7 @@
   
   /* Accent Colors */
   --accent-green: #10b981;
+  --accent-green-custom: #00A64F;
   --accent-orange: #f59e0b;
   --accent-red: #ef4444;
   

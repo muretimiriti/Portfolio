@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope, FaHeart } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const containerVariants = {
@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
               reliable systems and empowering solutions.
             </p>
             <div className="social-links">
-              {socialLinks.map((social, index) => (
+              {socialLinks.map((social) => (
                 <motion.a
                   key={social.name}
                   href={social.url}
@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
           <motion.div className="footer-section" variants={itemVariants}>
             <h4>Quick Links</h4>
             <ul className="footer-links">
-              {quickLinks.map((link, index) => (
+              {quickLinks.map((link) => (
                 <li key={link.name}>
                   <a href={link.href}>{link.name}</a>
                 </li>
@@ -102,10 +102,7 @@ const Footer: React.FC = () => {
         >
           <div className="footer-bottom-content">
             <p>
-              © 2024 Victor Mureti. Made with <FaHeart className="heart" /> and React.
-            </p>
-            <p className="footer-note">
-              Built with modern web technologies and deployed on Heroku.
+              © {new Date().getFullYear()} Victor Mureti. 
             </p>
           </div>
         </motion.div>
