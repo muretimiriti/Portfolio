@@ -126,7 +126,7 @@ const Contact: React.FC = () => {
               </p>
 
               <div className="contact-methods">
-                {contactInfo.map((info, index) => (
+                {contactInfo.map((info) => (
                   <motion.div
                     key={info.title}
                     className="contact-method"
@@ -149,7 +149,7 @@ const Contact: React.FC = () => {
               <div className="social-links">
                 <h4>Follow Me</h4>
                 <div className="social-icons">
-                  {socialLinks.map((social, index) => (
+                  {socialLinks.map((social) => (
                     <motion.a
                       key={social.name}
                       href={social.url}

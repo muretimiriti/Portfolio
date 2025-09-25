@@ -115,7 +115,7 @@ const Education: React.FC = () => {
             viewport={{ once: true }}
           >
             <h3>Education</h3>
-            {education.map((edu, index) => (
+            {education.map((edu) => (
               <motion.div
                 key={edu.title}
                 className="education-item"
@@ -167,7 +167,7 @@ const Education: React.FC = () => {
           >
             <h3>Certifications & Learning Progress</h3>
             <div className="certifications-grid">
-              {certifications.map((cert, index) => (
+              {certifications.map((cert) => (
                 <motion.div
                   key={cert.title}
                   className="certification-card"

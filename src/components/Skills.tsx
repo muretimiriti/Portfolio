@@ -100,7 +100,7 @@ const Skills: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {skillCategories.map((category, categoryIndex) => (
+          {skillCategories.map((category) => (
             <motion.div
               key={category.title}
               className="skill-category"

@@ -109,7 +109,7 @@ const Experience: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {experiences.map((experience, index) => (
+          {experiences.map((experience) => (
             <motion.div
               key={experience.title}
               className="experience-item"
