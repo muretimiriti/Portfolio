@@ -232,7 +232,7 @@ main {
 }
 
 .value-card h4 {
-  color: var(--primary-blue);
+  color: #073553;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -538,7 +538,7 @@ main {
 }
 
 .education-header h4 {
-  color: var(--primary-blue);
+  color: #073553;
   margin-bottom: var(--spacing-sm);
 }
 
@@ -602,7 +602,7 @@ main {
 }
 
 .certification-content h4 {
-  color: var(--primary-blue);
+  color: #073553;
   margin-bottom: var(--spacing-sm);
 }
 

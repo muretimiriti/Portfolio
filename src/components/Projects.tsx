@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaGithub, FaExternalLinkAlt, FaDocker, FaNodeJs, FaReact, FaDatabase } from 'react-icons/fa';
+import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 import canavilleImg from '../assets/canaville.png';
 import kikwetuImg from '../assets/kikwetu.png';
 import malikaleImg from '../assets/malikale.png';
@@ -250,7 +250,7 @@ const Projects: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.title}
               className="project-card"
