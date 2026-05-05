@@ -1,5 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
+import { FaServer, FaGlobeAfrica, FaRocket } from 'react-icons/fa';
 
 const About: React.FC = () => {
   const containerVariants = {
@@ -21,22 +22,21 @@ const About: React.FC = () => {
     }
   };
 
-  const values = [
+  const pillars = [
     {
-      title: 'Integrity',
-      description: 'Committed to ethical practices and transparent communication in all professional endeavors.'
+      title: 'Infrastructure & DevOps',
+      description: 'CI/CD, Kubernetes, Terraform, DevSecOps, banking-grade systems.',
+      icon: <FaServer />
     },
     {
-      title: 'Dynamism',
-      description: 'Adaptable and innovative, always seeking new challenges and growth opportunities.'
+      title: 'Community & Leadership',
+      description: 'Rotary DRR D9216, 2,000+ members, East Africa, social impact.',
+      icon: <FaGlobeAfrica />
     },
     {
-      title: 'Performance',
-      description: 'Focused on delivering high-quality solutions that exceed expectations and drive results.'
-    },
-    {
-      title: 'Cooperation',
-      description: 'Believing in the power of teamwork and collaborative problem-solving for optimal outcomes.'
+      title: 'Founder & Builder',
+      description: 'Perception Pro, Art of Kwizzez, Kora - shipping from idea to production.',
+      icon: <FaRocket />
     }
   ];
 
@@ -50,7 +50,7 @@ const About: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.h2 variants={itemVariants}>About Me</motion.h2>
+          <motion.h2 variants={itemVariants}>About</motion.h2>
         </motion.div>
 
         <div className="about-content">
@@ -62,31 +62,17 @@ const About: React.FC = () => {
             viewport={{ once: true }}
           >
             <motion.div className="about-bio" variants={itemVariants}>
-              <h3>My Journey in Technology</h3>
+              <h3>I build infrastructure that doesn't fail and communities that don't either.</h3>
               <p>
-                With a strong foundation in Information Technology and hands-on experience 
-                in both development and operations, I bring a unique perspective to solving 
-                complex technical challenges. My journey spans from application support 
-                to DevOps engineering, giving me a comprehensive understanding of the 
-                entire software development lifecycle.
+                By day I'm a DevOps and Infrastructure Engineer at Diamond Trust Bank - designing CI/CD pipelines, Kubernetes-managed deployments, and cloud systems that keep critical banking services running reliably. My stack: Docker, Tekton, Terraform, Ansible, AWS/GCP, with a strong focus on DevSecOps and GitOps principles.
               </p>
               <p>
-                I'm passionate about creating robust, scalable solutions that not only 
-                meet current requirements but also adapt to future needs. My experience 
-                in system support has taught me the importance of reliability and 
-                performance, while my DevOps background has instilled a culture of 
-                continuous improvement and automation.
+                Beyond the terminal, I'm the District Rotaract Representative Elect for Rotary District 9216 - a governance role overseeing 2,000+ young leaders across Ethiopia, Mt Kenya, the Coast, Thika, and Nairobi. I recently shipped the district-wide management and reporting system that replaced manual processes for the entire council. Because if you're going to lead people, you should also make their tools better.
               </p>
-            </motion.div>
-
-            <motion.div className="about-goals" variants={itemVariants}>
-              <h3>Career Goals</h3>
               <p>
-                I'm focused on advancing my expertise in cloud-native technologies and 
-                microservices architecture. My goal is to become a technical leader who 
-                can bridge the gap between development and operations, driving innovation 
-                while maintaining system stability and security.
+                I've co-founded two ventures: Perception Pro, where I serve as Tech Lead; and Art of Kwizzez, a game platform where I lead technology and team building. I also lead Kora, a factory production management system currently in active development.
               </p>
+              <p>Nairobi, Kenya. Building things that scale.</p>
             </motion.div>
           </motion.div>
 
@@ -97,9 +83,9 @@ const About: React.FC = () => {
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.h3 variants={itemVariants}>Core Values</motion.h3>
+            <motion.h3 variants={itemVariants}>Three Pillars</motion.h3>
             <div className="values-grid">
-              {values.map((value, index) => (
+              {pillars.map((value, index) => (
                 <motion.div
                   key={value.title}
                   className="value-card"
@@ -107,6 +93,7 @@ const About: React.FC = () => {
                   whileHover={{ scale: 1.05 }}
                   transition={{ delay: index * 0.1 }}
                 >
+                  <div className="pillar-icon">{value.icon}</div>
                   <h4>{value.title}</h4>
                   <p>{value.description}</p>
                 </motion.div>

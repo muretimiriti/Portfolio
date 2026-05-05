@@ -1,72 +1,16 @@
-/* Import Google Fonts */
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Sora:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;600;700&display=swap');
 
-/* CSS Variables for Color Palette */
 :root {
-  /* Primary Colors */
-  --primary-blue: #00A64F;
-  --primary-blue-dark: #008F42;
-  --primary-blue-light: #0f172a;
-  
-  /* Secondary Colors */
-  --secondary-gray: #64748b;
-  --secondary-gray-light: #94a3b8;
-  --secondary-gray-dark: #475569;
-  
-  /* Background Colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8fafc;
-  --bg-dark: #0f172a;
-  --bg-dark-secondary: #1e293b;
-  
-  /* Text Colors */
-  --text-primary: #0f172a;
-  --text-secondary: #64748b;
-  --text-light: #ffffff;
-  --text-muted: #94a3b8;
-  
-  /* Accent Colors */
-  --accent-green: #10b981;
-  --accent-green-custom: #00A64F;
-  --accent-orange: #f59e0b;
-  --accent-red: #ef4444;
-  
-  /* Shadows */
-  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
-  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
-  --shadow-lg: 0 10px 15px -3px rgb(0 0 0 / 0.1), 0 4px 6px -4px rgb(0 0 0 / 0.1);
-  --shadow-xl: 0 20px 25px -5px rgb(0 0 0 / 0.1), 0 8px 10px -6px rgb(0 0 0 / 0.1);
-  
-  /* Border Radius */
-  --radius-sm: 0.375rem;
-  --radius-md: 0.5rem;
-  --radius-lg: 0.75rem;
-  --radius-xl: 1rem;
-  
-  /* Spacing */
-  --spacing-xs: 0.25rem;
-  --spacing-sm: 0.5rem;
-  --spacing-md: 1rem;
-  --spacing-lg: 1.5rem;
-  --spacing-xl: 2rem;
-  --spacing-2xl: 3rem;
-  --spacing-3xl: 4rem;
-  
-  /* Fonts */
-  --font-primary: 'Inter', system-ui, -apple-system, sans-serif;
-  --font-heading: 'Poppins', system-ui, -apple-system, sans-serif;
+  --charcoal: #1a1a2e;
+  --charcoal-soft: #27304a;
+  --gold: #c9a84c;
+  --gold-deep: #9f7f27;
+  --cream: #f5f0e6;
+  --ink: #151522;
+  --font-display: 'Sora', 'Segoe UI', sans-serif;
+  --font-body: 'Source Sans 3', 'Segoe UI', sans-serif;
 }
 
-/* Dark Theme Variables */
-[data-theme="dark"] {
-  --bg-primary: #0f172a;
-  --bg-secondary: #1e293b;
-  --text-primary: #ffffff;
-  --text-secondary: #cbd5e1;
-  --text-muted: #64748b;
-}
-
-/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
@@ -78,185 +22,84 @@ html {
 }
 
 body {
-  font-family: var(--font-primary);
+  font-family: var(--font-body);
   line-height: 1.6;
-  color: var(--text-primary);
-  background-color: var(--bg-primary);
-  transition: background-color 0.3s ease, color 0.3s ease;
+  color: var(--ink);
+  background-color: var(--cream);
 }
 
-/* Typography */
 h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading);
-  font-weight: 600;
-  line-height: 1.2;
-  margin-bottom: var(--spacing-md);
-}
-
-h1 {
-  font-size: 3rem;
+  font-family: var(--font-display);
   font-weight: 700;
-}
-
-h2 {
-  font-size: 2.5rem;
-}
-
-h3 {
-  font-size: 2rem;
-}
-
-h4 {
-  font-size: 1.5rem;
-  color: #073553;
-}
-
-h5 {
-  font-size: 1.25rem;
-}
-
-h6 {
-  font-size: 1.125rem;
+  line-height: 1.2;
+  margin-bottom: 0.65rem;
 }
 
 p {
-  margin-bottom: var(--spacing-md);
-  color: var(--text-secondary);
+  margin-bottom: 0.8rem;
+  color: #2b3042;
 }
 
 a {
-  color: var(--primary-blue);
+  color: var(--charcoal-soft);
   text-decoration: none;
-  transition: color 0.3s ease;
 }
 
 a:hover {
-  color: var(--primary-blue-dark);
+  color: var(--gold-deep);
 }
 
-/* Button Styles */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--spacing-sm) var(--spacing-lg);
-  border: none;
-  border-radius: var(--radius-md);
-  font-family: var(--font-primary);
-  font-weight: 500;
-  font-size: 1rem;
+  padding: 0.55rem 1rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.92rem;
   text-decoration: none;
   cursor: pointer;
-  transition: all 0.3s ease;
-  gap: var(--spacing-sm);
+  transition: transform 0.22s ease;
+  gap: 0.45rem;
 }
 
 .btn-primary {
-  background-color: var(--primary-blue);
-  color: var(--text-light);
+  background-color: var(--gold);
+  color: #191919;
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-blue-dark);
+  background-color: #d4b55d;
   transform: translateY(-2px);
-  box-shadow: var(--shadow-lg);
 }
 
 .btn-secondary {
-  background-color: transparent;
-  color: var(--primary-blue);
-  border: 2px solid var(--primary-blue);
+  background: transparent;
+  color: var(--cream);
+  border-color: rgba(245, 240, 230, 0.6);
 }
 
 .btn-secondary:hover {
-  background-color: var(--primary-blue);
-  color: var(--text-light);
+  border-color: var(--gold);
+  color: var(--gold);
 }
 
 .btn-outline {
-  background-color: transparent;
-  color: var(--text-primary);
-  border: 2px solid var(--secondary-gray);
+  background: transparent;
+  color: var(--cream);
+  border-color: var(--gold);
 }
 
 .btn-outline:hover {
-  background-color: var(--secondary-gray);
-  color: var(--text-light);
+  background: rgba(201, 168, 76, 0.12);
 }
 
-/* Container */
 .container {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 0 var(--spacing-lg);
-}
-
-/* Section Styles */
-.section {
-  padding: var(--spacing-3xl) 0;
-}
-
-.section-title {
-  text-align: center;
-  margin-bottom: var(--spacing-3xl);
-}
-
-.section-title h2 {
-  position: relative;
-  display: inline-block;
-}
-
-.section-title h2::after {
-  content: '';
-  position: absolute;
-  bottom: -10px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 60px;
-  height: 4px;
-  background-color: var(--primary-blue);
-  border-radius: var(--radius-sm);
-}
-
-/* Card Styles */
-.card {
-  background-color: var(--bg-secondary);
-  border-radius: var(--radius-lg);
-  padding: var(--spacing-xl);
-  box-shadow: var(--shadow-md);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: var(--shadow-xl);
-}
-
-/* Grid Layouts */
-.grid {
-  display: grid;
-  gap: var(--spacing-xl);
-}
-
-.grid-2 {
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-}
-
-.grid-3 {
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-.grid-4 {
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-}
-
-/* Utility Classes */
-.text-center {
-  text-align: center;
-}
-
-.text-left {
-  text-align: left;
+  padding: 0 1.2rem;
 }
 
 .text-right {

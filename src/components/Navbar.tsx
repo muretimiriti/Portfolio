@@ -1,10 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { FaBars, FaTimes, FaSun, FaMoon } from 'react-icons/fa';
+import { FaBars, FaTimes } from 'react-icons/fa';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDark, setIsDark] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -15,18 +14,13 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const toggleTheme = () => {
-    setIsDark(!isDark);
-    document.documentElement.setAttribute('data-theme', !isDark ? 'dark' : 'light');
-  };
-
   const navItems = [
-    { name: 'Home', href: '#home' },
+    { name: 'Hero', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' },
+    { name: 'Rotary', href: '#rotary' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' },
   ];
 
@@ -44,7 +38,7 @@ const Navbar: React.FC = () => {
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
           >
-            <a href="#home">Victor Mureti</a>
+            <a href="#hero">Victor Mureti</a>
           </motion.div>
 
           <div className={`nav-menu ${isOpen ? 'active' : ''}`}>
@@ -64,15 +58,6 @@ const Navbar: React.FC = () => {
           </div>
 
           <div className="nav-actions">
-            <motion.button
-              className="theme-toggle"
-              onClick={toggleTheme}
-              whileHover={{ scale: 1.1 }}
-              whileTap={{ scale: 0.9 }}
-            >
-              {isDark ? <FaSun /> : <FaMoon />}
-            </motion.button>
-
             <motion.button
               className="nav-toggle"
               onClick={() => setIsOpen(!isOpen)}

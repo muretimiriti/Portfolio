@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaLinkedin, FaGithub, FaTwitter, FaEnvelope } from 'react-icons/fa';
+import { FaLinkedin, FaGithub, FaEnvelope } from 'react-icons/fa';
 
 const Footer: React.FC = () => {
   const containerVariants = {
@@ -23,19 +23,18 @@ const Footer: React.FC = () => {
   };
 
   const socialLinks = [
-    { icon: <FaLinkedin />, url: 'https://www.linkedin.com/in/victor-mureti-b07512215/', name: 'LinkedIn' },
+    { icon: <FaLinkedin />, url: 'https://linkedin.com/in/victor-mureti', name: 'LinkedIn' },
     { icon: <FaGithub />, url: 'https://github.com/muretimiriti', name: 'GitHub' },
-    { icon: <FaTwitter />, url: 'https://twitter.com/victor_mureti', name: 'Twitter' },
-    { icon: <FaEnvelope />, url: 'mailto:muretivictor@gmail.com', name: 'Email' }
+    { icon: <FaEnvelope />, url: 'mailto:victormureti@gmail.com', name: 'Email' }
   ];
 
   const quickLinks = [
-    { name: 'Home', href: '#home' },
+    { name: 'Hero', href: '#hero' },
     { name: 'About', href: '#about' },
-    { name: 'Skills', href: '#skills' },
     { name: 'Projects', href: '#projects' },
     { name: 'Experience', href: '#experience' },
-    { name: 'Education', href: '#education' },
+    { name: 'Rotary', href: '#rotary' },
+    { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' }
   ];
 
@@ -52,8 +51,7 @@ const Footer: React.FC = () => {
           <motion.div className="footer-section" variants={itemVariants}>
             <h3>Victor Mureti</h3>
             <p>
-              Full-Stack Developer & DevOps Engineer passionate about building 
-              reliable systems and empowering solutions.
+              DevOps Engineer · Co-founder · District Rotaract Representative Elect D9216.
             </p>
             <div className="social-links">
               {socialLinks.map((social) => (
@@ -84,11 +82,11 @@ const Footer: React.FC = () => {
           </motion.div>
 
           <motion.div className="footer-section" variants={itemVariants}>
-            <h4>Contact Info</h4>
+            <h4>Landing Pad</h4>
             <div className="contact-info">
-              <p>📧 muretivictor@gmail.com</p>
-              <p>📱 +254 708 287 141</p>
-              <p>📍 Nairobi, Kenya</p>
+              <p>victormureti@gmail.com</p>
+              <p>Nairobi, Kenya</p>
+              <p>Open to platform engineering and impact collaboration.</p>
             </div>
           </motion.div>
         </motion.div>
@@ -102,7 +100,7 @@ const Footer: React.FC = () => {
         >
           <div className="footer-bottom-content">
             <p>
-              © {new Date().getFullYear()} Victor Mureti. 
+              © {new Date().getFullYear()} Victor Mureti · Nairobi, Kenya
             </p>
           </div>
         </motion.div>

@@ -1,16 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
-import { FaEnvelope, FaPhone, FaMapMarkerAlt, FaLinkedin, FaGithub, FaTwitter, FaPaperPlane } from 'react-icons/fa';
+import { FaEnvelope, FaMapMarkerAlt, FaLinkedin, FaGithub } from 'react-icons/fa';
 
 const Contact: React.FC = () => {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    message: ''
-  });
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -30,67 +22,30 @@ const Contact: React.FC = () => {
     }
   };
 
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }));
-  };
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    
-    // Simulate form submission
-    setTimeout(() => {
-      setIsSubmitting(false);
-      setSubmitStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-      
-      // Reset status after 3 seconds
-      setTimeout(() => {
-        setSubmitStatus('idle');
-      }, 3000);
-    }, 1000);
-  };
-
-  const contactInfo = [
+  const contactLinks = [
     {
       icon: <FaEnvelope />,
       title: 'Email',
-      value: 'muretivictor@gmail.com',
-      link: 'mailto:muretivictor@gmail.com'
+      value: 'victormureti@gmail.com',
+      link: 'mailto:victormureti@gmail.com'
     },
     {
-      icon: <FaPhone />,
-      title: 'Phone',
-      value: '+254 708 287 141',
-      link: 'tel:+254708287141'
+      icon: <FaLinkedin />,
+      name: 'LinkedIn',
+      value: 'linkedin.com/in/victor-mureti',
+      link: 'https://linkedin.com/in/victor-mureti'
+    },
+    {
+      icon: <FaGithub />,
+      name: 'GitHub',
+      value: 'github.com/muretimiriti',
+      link: 'https://github.com/muretimiriti'
     },
     {
       icon: <FaMapMarkerAlt />,
       title: 'Location',
       value: 'Nairobi, Kenya',
-      link: null
-    }
-  ];
-
-  const socialLinks = [
-    {
-      icon: <FaLinkedin />,
-      name: 'LinkedIn',
-      url: 'https://www.linkedin.com/in/victor-mureti-b07512215/'
-    },
-    {
-      icon: <FaGithub />,
-      name: 'GitHub',
-      url: 'https://github.com/muretimiriti'
-    },
-    {
-      icon: <FaTwitter />,
-      name: 'Twitter',
-      url: 'https://twitter.com/victor_mureti'
+      link: ''
     }
   ];
 
@@ -104,156 +59,34 @@ const Contact: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.h2 variants={itemVariants}>Get In Touch</motion.h2>
+          <motion.h2 variants={itemVariants}>Let's build something.</motion.h2>
           <motion.p variants={itemVariants}>
-            I'm always open to discussing new opportunities and interesting projects
+            Whether it's a DevOps architecture conversation, a Rotary collaboration, or a startup you're building in East Africa - I'm open to the right conversations.
           </motion.p>
         </motion.div>
 
-        <div className="contact-content">
-          <motion.div
-            className="contact-info"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div className="contact-details" variants={itemVariants}>
-              <h3>Let's Connect</h3>
-              <p>
-                Whether you have a project in mind, want to discuss technology, 
-                or just want to say hello, I'd love to hear from you!
-              </p>
-
-              <div className="contact-methods">
-                {contactInfo.map((info) => (
-                  <motion.div
-                    key={info.title}
-                    className="contact-method"
-                    variants={itemVariants}
-                    whileHover={{ scale: 1.05 }}
-                  >
-                    <div className="contact-icon">{info.icon}</div>
-                    <div className="contact-text">
-                      <h4>{info.title}</h4>
-                      {info.link ? (
-                        <a href={info.link}>{info.value}</a>
-                      ) : (
-                        <span>{info.value}</span>
-                      )}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-
-              <div className="social-links">
-                <h4>Follow Me</h4>
-                <div className="social-icons">
-                  {socialLinks.map((social) => (
-                    <motion.a
-                      key={social.name}
-                      href={social.url}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="social-link"
-                      variants={itemVariants}
-                      whileHover={{ scale: 1.2 }}
-                      whileTap={{ scale: 0.9 }}
-                    >
-                      {social.icon}
-                    </motion.a>
-                  ))}
-                </div>
-              </div>
+        <motion.div
+          className="contact-card"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {contactLinks.map((item) => (
+            <motion.div key={item.value} className="contact-row" variants={itemVariants}>
+              <span className="contact-icon">{item.icon}</span>
+              <span className="contact-label">{item.title ?? item.name}</span>
+              {item.link ? (
+                <a href={item.link} target={item.link.startsWith('http') ? '_blank' : undefined} rel="noopener noreferrer">
+                  {item.value}
+                </a>
+              ) : (
+                <span>{item.value}</span>
+              )}
             </motion.div>
-          </motion.div>
-
-          <motion.div
-            className="contact-form-container"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.form
-              className="contact-form"
-              onSubmit={handleSubmit}
-              variants={itemVariants}
-            >
-              <h3>Send Me a Message</h3>
-              
-              <div className="form-group">
-                <label htmlFor="name">Name</label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="Your full name"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="email">Email</label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleInputChange}
-                  required
-                  placeholder="your.email@example.com"
-                />
-              </div>
-
-              <div className="form-group">
-                <label htmlFor="message">Message</label>
-                <textarea
-                  id="message"
-                  name="message"
-                  value={formData.message}
-                  onChange={handleInputChange}
-                  required
-                  rows={5}
-                  placeholder="Tell me about your project or just say hello!"
-                />
-              </div>
-
-              <motion.button
-                type="submit"
-                className="btn btn-primary"
-                disabled={isSubmitting}
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <FaPaperPlane />
-                {isSubmitting ? 'Sending...' : 'Send Message'}
-              </motion.button>
-
-              {submitStatus === 'success' && (
-                <motion.div
-                  className="form-success"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  Thank you! Your message has been sent successfully.
-                </motion.div>
-              )}
-
-              {submitStatus === 'error' && (
-                <motion.div
-                  className="form-error"
-                  initial={{ opacity: 0, y: 10 }}
-                  animate={{ opacity: 1, y: 0 }}
-                >
-                  Sorry, there was an error sending your message. Please try again.
-                </motion.div>
-              )}
-            </motion.form>
-          </motion.div>
-        </div>
+          ))}
+          <p className="availability">Available for Senior DevOps / Platform Engineering roles · Technical leadership · Rotary & impact collaboration.</p>
+        </motion.div>
       </div>
     </section>
   );

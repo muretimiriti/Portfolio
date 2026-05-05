@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaDownload, FaEnvelope, FaGithub, FaLinkedin, FaTwitter } from 'react-icons/fa';
+import { FaDownload, FaLinkedin } from 'react-icons/fa';
 import headshot from '../assets/headshot.jpeg';
 
 const Hero: React.FC = () => {
@@ -23,8 +23,14 @@ const Hero: React.FC = () => {
     }
   };
 
+  const stats = [
+    '2,000+ Rotaractors governed across 5 East African regions',
+    '2 tech ventures co-founded (Perception Pro + Art of Kwizzez)',
+    '11 production systems and applications delivered'
+  ];
+
   return (
-    <section id="home" className="hero">
+    <section id="hero" className="hero">
       <div className="container">
         <motion.div
           className="hero-content"
@@ -37,23 +43,26 @@ const Hero: React.FC = () => {
               className="hero-title"
               variants={itemVariants}
             >
-              Hi, I'm <span className="highlight">Victor Mureti</span>
+              Victor Mureti
             </motion.h1>
-            
+
             <motion.p
               className="hero-subtitle"
               variants={itemVariants}
             >
-              Building reliable systems, empowering solutions
+              DevOps Engineer · Co-founder · District Rotaract Representative Elect, D9216
             </motion.p>
-            
+
+            <motion.h2 className="hero-tagline" variants={itemVariants}>
+              Engineering reliable systems.<br />
+              Building resilient communities.
+            </motion.h2>
+
             <motion.p
               className="hero-description"
               variants={itemVariants}
             >
-              Full-Stack Developer & DevOps Engineer specializing in web development, 
-              system support, and cloud infrastructure. Passionate about creating 
-              efficient solutions that drive business success.
+              I build infrastructure that doesn't fail and communities that don't either. Based in Nairobi, Kenya - shipping CI/CD pipelines by day and governing 2,000+ Rotaractors by calling.
             </motion.p>
 
             <motion.div
@@ -61,17 +70,16 @@ const Hero: React.FC = () => {
               variants={itemVariants}
             >
               <motion.a
-                href="#contact"
+                href="#projects"
                 className="btn btn-primary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <FaEnvelope />
-                Contact Me
+                View my work
               </motion.a>
-              
+
               <motion.a
-                href="/resume.pdf"
+                href="/Victor-Mureti-CV.pdf"
                 className="btn btn-secondary"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
@@ -80,21 +88,24 @@ const Hero: React.FC = () => {
                 <FaDownload />
                 Download CV
               </motion.a>
+
+              <motion.a
+                href="https://linkedin.com/in/victor-mureti"
+                className="btn btn-outline"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <FaLinkedin />
+                Let's connect
+              </motion.a>
             </motion.div>
 
-            <motion.div
-              className="hero-social"
-              variants={itemVariants}
-            >
-              <a href="https://www.linkedin.com/in/victor-mureti-b07512215/" target="_blank" rel="noopener noreferrer">
-                <FaLinkedin />
-              </a>
-              <a href="https://github.com/muretimiriti" target="_blank" rel="noopener noreferrer">
-                <FaGithub />
-              </a>
-              <a href="https://twitter.com/victor_mureti" target="_blank" rel="noopener noreferrer">
-                <FaTwitter />
-              </a>
+            <motion.div className="hero-stats" variants={itemVariants}>
+              {stats.map((stat) => (
+                <div key={stat} className="stat-chip">{stat}</div>
+              ))}
             </motion.div>
           </motion.div>
 
@@ -107,7 +118,7 @@ const Hero: React.FC = () => {
             <div className="headshot-container">
               <img 
                 src={headshot} 
-                alt="Victor Mureti - Full-Stack Developer & DevOps Engineer"
+                alt="Victor Mureti"
                 className="headshot-image"
               />
             </div>

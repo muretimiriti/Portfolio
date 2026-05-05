@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { FaBriefcase, FaCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa';
+import { FaBriefcase } from 'react-icons/fa';
 
 const Experience: React.FC = () => {
   const containerVariants = {
@@ -15,9 +15,9 @@ const Experience: React.FC = () => {
   };
 
   const itemVariants = {
-    hidden: { x: -20, opacity: 0 },
+    hidden: { y: 20, opacity: 0 },
     visible: {
-      x: 0,
+      y: 0,
       opacity: 1
     }
   };
@@ -25,64 +25,94 @@ const Experience: React.FC = () => {
   const experiences = [
     {
       title: 'Application Support Specialist',
-      company: 'Tech Solutions Ltd',
+      company: 'Diamond Trust Bank',
+      location: 'Nairobi, Kenya · On-site',
+      period: 'Jan 2026 - Present',
+      type: 'Junior DevOps & System Engineer',
+      responsibilities: [
+        'Design and maintain CI/CD pipelines (Tekton) improving deployment speed and release confidence.',
+        'Manage containerised infrastructure (Docker + Kubernetes) across cloud environments.',
+        'Provision and maintain infrastructure with Terraform and Ansible (IaC).'
+      ],
+      tags: ['Docker', 'Kubernetes', 'Tekton', 'Terraform', 'Ansible', 'DevSecOps']
+    },
+    {
+      title: 'Co-founder & Tech Lead',
+      company: 'Perception Pro',
+      location: 'Nairobi, Kenya · Hybrid',
+      period: 'Jan 2025 - Present',
+      type: 'Co-founder',
+      responsibilities: [
+        'Co-founded the venture and own technical architecture and engineering roadmap.',
+        'Lead engineering team hiring, onboarding, and cross-functional delivery.',
+        'Manage containerised stack, CI/CD pipelines, and supporting infrastructure.'
+      ],
+      tags: ['Co-founder', 'Architecture', 'CI/CD', 'Docker', 'Team building']
+    },
+    {
+      title: 'Co-founder, Tech Lead & Team Building Lead',
+      company: 'Art of Kwizzez',
+      location: 'Nairobi, Kenya · Hybrid',
+      period: 'Jan 2026 - Present',
+      type: 'Co-founder',
+      responsibilities: [
+        'Co-founded a game development and live-event delivery platform.',
+        'Lead platform architecture, DevOps pipeline, and gaming module design.',
+        'Coordinate delivery across engineering and creative teams.'
+      ],
+      tags: ['Game dev', 'Live events', 'Next.js', 'React', 'Team leadership']
+    },
+    {
+      title: 'Web Developer',
+      company: 'VinedFastside',
+      location: 'Nairobi, Kenya · Remote · Contract',
+      period: 'Jan 2024 - Jan 2026',
+      type: 'Contract',
+      responsibilities: [
+        'Built and maintained web applications supporting cleaning operations in Kenya.',
+        'Collaborated with designers and stakeholders to deliver business-ready features.',
+        'Optimised website performance and UX for the East African web context.'
+      ],
+      tags: ['Next.js', 'Node.js', 'Web development', 'Remote delivery']
+    },
+    {
+      title: 'District Rotaract Representative Elect',
+      company: 'Rotary International, District 9216',
+      location: 'East Africa · Volunteer Leadership',
+      period: 'Jan 2020 - Present (member of Rotary International)',
+      type: 'Governance',
+      responsibilities: [
+        'Inaugural DRR for newly formed D9216 with term commencing July 2026.',
+        'Governance scope covering 2,000+ Rotaractors across five East African regions.',
+        'Built district management system and supported chartering of three clubs in one cycle.'
+      ],
+      tags: ['Governance', 'Leadership', 'D9216', '2,000+ members', 'AgriTech']
+    },
+    {
+      title: 'Marketing Associate',
+      company: 'Blooms and Beats',
+      location: 'Nairobi, Kenya · Hybrid · Apprenticeship',
+      period: 'Nov 2019 - Apr 2024',
+      type: 'Apprenticeship',
+      responsibilities: [
+        'Handled communication, event marketing, and brand-building responsibilities.',
+        'Contributed to campaign planning and delivery across multiple events.',
+        'Built strong foundations in audience engagement and operational discipline.'
+      ],
+      tags: ['Marketing', 'Communication', 'Events', 'Brand']
+    },
+    {
+      title: 'Bachelor of Science - Computer Technology',
+      company: 'Jomo Kenyatta University of Agriculture and Technology (JKUAT)',
       location: 'Nairobi, Kenya',
-      period: '2022 - Present',
-      type: 'Full-time',
-      description: 'Providing comprehensive application support and maintenance for enterprise systems.',
+      period: 'Sep 2019 - Nov 2023',
+      type: 'Education',
       responsibilities: [
-        'Managed application support tickets and resolved technical issues',
-        'Conducted root cause analysis for system failures and performance issues',
-        'Coordinated User Acceptance Testing (UAT) for new feature releases',
-        'Implemented backup validation procedures and disaster recovery protocols',
-        'Performed vulnerability assessments and security audits',
-        'Collaborated with development teams to improve system reliability'
+        'Focused on networking, systems design, requirements definition, and 14+ technical disciplines.',
+        'Balanced technical studies with active involvement in rugby and Rotary.',
+        'Built strong systems-thinking and engineering fundamentals.'
       ],
-      achievements: [
-        'Reduced system downtime by 40% through proactive monitoring',
-        'Improved customer satisfaction scores by 25%',
-        'Successfully managed 200+ support tickets monthly'
-      ]
-    },
-    {
-      title: 'DevOps Trainee',
-      company: 'Cloud Innovations Inc',
-      location: 'Remote',
-      period: '2021 - 2022',
-      type: 'Internship',
-      description: 'Gained hands-on experience in DevOps practices and cloud infrastructure management.',
-      responsibilities: [
-        'Assisted in CI/CD pipeline setup and maintenance',
-        'Learned containerization with Docker and orchestration',
-        'Participated in cloud infrastructure provisioning on AWS',
-        'Contributed to automation script development',
-        'Supported deployment processes and monitoring setup'
-      ],
-      achievements: [
-        'Completed Docker certification program',
-        'Contributed to 3 successful production deployments',
-        'Developed automation scripts that reduced manual tasks by 60%'
-      ]
-    },
-    {
-      title: 'Freelance Web Developer',
-      company: 'Self-Employed',
-      location: 'Remote',
-      period: '2020 - 2021',
-      type: 'Freelance',
-      description: 'Delivered custom web solutions for small and medium businesses.',
-      responsibilities: [
-        'Developed responsive web applications using modern frameworks',
-        'Designed and implemented RESTful APIs',
-        'Managed client relationships and project requirements',
-        'Provided technical consultation and system architecture advice',
-        'Ensured code quality through testing and documentation'
-      ],
-      achievements: [
-        'Completed 15+ successful projects for various clients',
-        'Maintained 100% client satisfaction rate',
-        'Built scalable solutions serving 1000+ daily users'
-      ]
+      tags: ['JKUAT', 'Computer Technology', 'Networking']
     }
   ];
 
@@ -96,9 +126,9 @@ const Experience: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.h2 variants={itemVariants}>Professional Experience</motion.h2>
+          <motion.h2 variants={itemVariants}>Experience Timeline</motion.h2>
           <motion.p variants={itemVariants}>
-            My journey through various roles in technology and software development
+            Most recent roles first, spanning infrastructure engineering, ventures, and leadership.
           </motion.p>
         </motion.div>
 
@@ -109,10 +139,10 @@ const Experience: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {experiences.map((experience) => (
+          {experiences.map((experience, index) => (
             <motion.div
               key={experience.title}
-              className="experience-item"
+              className={`experience-item ${index % 2 === 0 ? 'left' : 'right'}`}
               variants={itemVariants}
             >
               <div className="experience-marker">
@@ -124,23 +154,14 @@ const Experience: React.FC = () => {
                   <h3>{experience.title}</h3>
                   <div className="experience-meta">
                     <span className="company">{experience.company}</span>
-                    <span className="period">
-                      <FaCalendarAlt />
-                      {experience.period}
-                    </span>
-                    <span className="location">
-                      <FaMapMarkerAlt />
-                      {experience.location}
-                    </span>
+                    <span className="period">{experience.period}</span>
+                    <span className="location">{experience.location}</span>
                     <span className="type">{experience.type}</span>
                   </div>
                 </div>
 
-                <p className="experience-description">{experience.description}</p>
-
                 <div className="experience-details">
                   <div className="responsibilities">
-                    <h4>Key Responsibilities:</h4>
                     <ul>
                       {experience.responsibilities.map((responsibility, respIndex) => (
                         <li key={respIndex}>{responsibility}</li>
@@ -148,13 +169,10 @@ const Experience: React.FC = () => {
                     </ul>
                   </div>
 
-                  <div className="achievements">
-                    <h4>Key Achievements:</h4>
-                    <ul>
-                      {experience.achievements.map((achievement, achIndex) => (
-                        <li key={achIndex}>{achievement}</li>
-                      ))}
-                    </ul>
+                  <div className="experience-tags">
+                    {experience.tags.map((tag) => (
+                      <span key={tag} className="tech-tag">{tag}</span>
+                    ))}
                   </div>
                 </div>
               </div>

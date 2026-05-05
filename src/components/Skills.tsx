@@ -1,10 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { 
-  FaNodeJs, FaReact, FaDocker, FaAws, FaGitAlt, FaLinux,
-  FaDatabase, FaServer, FaCode, FaTools, FaCloud
-} from 'react-icons/fa';
-import { SiExpress, SiMongodb, SiPostman } from 'react-icons/si';
+import { FaCloud, FaCodeBranch, FaUsers } from 'react-icons/fa';
 
 const Skills: React.FC = () => {
   const containerVariants = {
@@ -28,51 +24,45 @@ const Skills: React.FC = () => {
 
   const skillCategories = [
     {
-      title: 'Web Development',
-      icon: <FaCode />,
-      skills: [
-        { name: 'Node.js', icon: <FaNodeJs />, level: 90 },
-        { name: 'Express.js', icon: <SiExpress />, level: 85 },
-        { name: 'React', icon: <FaReact />, level: 80 },
-        { name: 'REST APIs', icon: <FaServer />, level: 85 },
-        { name: 'MongoDB', icon: <SiMongodb />, level: 80 },
-        { name: 'SQL', icon: <FaDatabase />, level: 75 }
-      ]
-    },
-    {
-      title: 'DevOps & Cloud',
+      title: 'Infrastructure & DevOps',
       icon: <FaCloud />,
       skills: [
-        { name: 'Docker', icon: <FaDocker />, level: 85 },
-        { name: 'GitHub Actions', icon: <FaGitAlt />, level: 80 },
-        { name: 'AWS EC2', icon: <FaAws />, level: 75 },
-        { name: 'AWS IAM', icon: <FaAws />, level: 70 },
-        { name: 'AWS S3', icon: <FaAws />, level: 75 },
-        { name: 'Heroku', icon: <FaCloud />, level: 80 }
+        'CI/CD Pipelines (Tekton, GitHub Actions)',
+        'Kubernetes - container orchestration',
+        'Docker - containerisation',
+        'Terraform - infrastructure as code',
+        'Ansible - configuration management',
+        'DevSecOps - security-integrated pipelines',
+        'GitOps - declarative infrastructure',
+        'Cloud: AWS, GCP',
+        'Observability & monitoring'
       ]
     },
     {
-      title: 'System Support & ITIL',
-      icon: <FaServer />,
+      title: 'Development & Systems',
+      icon: <FaCodeBranch />,
       skills: [
-        { name: 'Application Support', icon: <FaTools />, level: 90 },
-        { name: 'Root Cause Analysis', icon: <FaTools />, level: 85 },
-        { name: 'UAT Coordination', icon: <FaTools />, level: 80 },
-        { name: 'Backup Validation', icon: <FaTools />, level: 85 },
-        { name: 'Vulnerability Assessment', icon: <FaTools />, level: 75 },
-        { name: 'ITIL Practices', icon: <FaTools />, level: 70 }
+        'Next.js / React - primary web stack',
+        'Node.js - backend services',
+        'TypeScript',
+        'PostgreSQL / MongoDB',
+        'REST APIs & integrations',
+        'Fabric.js - canvas customisation',
+        'Zustand - state management',
+        'Pesapal - payments (East Africa)',
+        'WhatsApp Business API'
       ]
     },
     {
-      title: 'Tools & Technologies',
-      icon: <FaTools />,
+      title: 'Leadership & Operations',
+      icon: <FaUsers />,
       skills: [
-        { name: 'Git', icon: <FaGitAlt />, level: 85 },
-        { name: 'Bash Scripting', icon: <FaLinux />, level: 80 },
-        { name: 'Postman', icon: <SiPostman />, level: 85 },
-        { name: 'VS Code', icon: <FaCode />, level: 90 },
-        { name: 'Linux/Ubuntu', icon: <FaLinux />, level: 85 },
-        { name: 'Windows Server', icon: <FaServer />, level: 75 }
+        'Technical architecture & roadmap',
+        'Engineering team hiring & lead',
+        'Cross-functional team coordination',
+        'Governance & stakeholder reporting',
+        'Community & civic leadership',
+        'Event design & delivery'
       ]
     }
   ];
@@ -87,9 +77,9 @@ const Skills: React.FC = () => {
           whileInView="visible"
           viewport={{ once: true }}
         >
-          <motion.h2 variants={itemVariants}>Skills & Expertise</motion.h2>
+          <motion.h2 variants={itemVariants}>Skills & Stack</motion.h2>
           <motion.p variants={itemVariants}>
-            A comprehensive overview of my technical skills and professional competencies
+            Curated to signal infrastructure-first engineering, systems delivery, and leadership execution.
           </motion.p>
         </motion.div>
 
@@ -113,35 +103,32 @@ const Skills: React.FC = () => {
               </div>
               
               <div className="skills-list">
-                {category.skills.map((skill, skillIndex) => (
+                {category.skills.map((skill) => (
                   <motion.div
-                    key={skill.name}
+                    key={skill}
                     className="skill-item"
                     variants={itemVariants}
                     whileHover={{ scale: 1.05 }}
-                    transition={{ delay: skillIndex * 0.05 }}
                   >
-                    <div className="skill-info">
-                      <div className="skill-icon">{skill.icon}</div>
-                      <span className="skill-name">{skill.name}</span>
-                    </div>
-                    <div className="skill-level">
-                      <div className="skill-bar">
-                        <motion.div
-                          className="skill-progress"
-                          initial={{ width: 0 }}
-                          whileInView={{ width: `${skill.level}%` }}
-                          viewport={{ once: true }}
-                          transition={{ duration: 1, delay: skillIndex * 0.1 }}
-                        />
-                      </div>
-                      <span className="skill-percentage">{skill.level}%</span>
-                    </div>
+                    <span className="skill-name">{skill}</span>
                   </motion.div>
                 ))}
               </div>
             </motion.div>
           ))}
+        </motion.div>
+
+        <motion.div
+          className="certification-note"
+          variants={itemVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          <h3>Certification</h3>
+          <p>
+            Cisco Networking Academy: Cybersecurity and Cyber Operations - covering network security fundamentals, threat detection frameworks, and cyber operations directly relevant to DevSecOps practice.
+          </p>
         </motion.div>
       </div>
     </section>
